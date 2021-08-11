@@ -1,23 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import useWindowDimensions from "./components/useWindowDimensions";
+
+import NavBar from "./components/NavBar";
+import MobileNav from "./components/MobileNav";
+import HomePage from "./pages/HomePage";
+import AboutPage from "./pages/AboutPage";
+import ResumePage from "./pages/ResumePage";
+import ProjectPage from "./pages/ProjectPage";
+import ProjectInfoPage from "./pages/ProjectInfoPage";
+import Footer from "./components/Footer";
 
 function App() {
+  const { width } = useWindowDimensions();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {width < 768 ? <MobileNav /> : <NavBar width={width} />}
+      <HomePage />
+      <AboutPage />
+      <ResumePage />
+      <ProjectPage />
+      <Footer />
+      {/* <ProjectInfoPage /> */}
     </div>
   );
 }
