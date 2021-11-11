@@ -1,10 +1,7 @@
 import styled from "styled-components";
 import { openUrlInNewTab } from "../utils/utils";
-import useWindowDimensions from "./useWindowDimensions";
 
 const ProjectItem = ({ title, description, url, img }) => {
-  const { width } = useWindowDimensions();
-
   return (
     <Project>
       <div className='projectWrapper'>

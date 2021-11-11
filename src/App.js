@@ -6,7 +6,6 @@ import HomePage from "./pages/HomePage";
 import AboutPage from "./pages/AboutPage";
 import ResumePage from "./pages/ResumePage";
 import ProjectPage from "./pages/ProjectPage";
-import ProjectInfoPage from "./pages/ProjectInfoPage";
 import Footer from "./components/Footer";
 
 function App() {
