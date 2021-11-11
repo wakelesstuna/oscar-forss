@@ -1,33 +1,35 @@
 import styled from "styled-components";
 import ResumeButton from "../components/ResumeButton";
 import { FaFileDownload } from "react-icons/fa";
+import { aboutMe } from "../data/aboutMe";
 
 const AboutPage = () => {
+  const mailTo = `mailto:${aboutMe.email}`;
+
   return (
     <About id='about'>
-      <div className='aboutText'>
-        <h3>About me</h3>
-        <p>
-          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quasi quidem
-          similique distinctio voluptates ab neque eos eveniet dolor fuga beatae
-          minus aut provident et aliquam, molestiae, hic alias? Laborum a
-          reprehenderit ipsum mollitia, deserunt expedita quas amet non alias in
-          voluptates eaque tempore iure debitis?
-        </p>
+      <div className='imageWrapper'>
+        <img src={aboutMe.profilePic} alt='profile' />
       </div>
-      <div className='contactInfo'>
-        <h3>Contact</h3>
-        <p>Oscar Forss</p>
-        <p>Stockholm, Sweden</p>
-        <p>+46 707 48 27 55</p>
-        <p>
-          <a href='mailto:oscar.forss.1@gmail.com'>
-            <span>oscar.forss.1@gmail.com</span>
-          </a>
-        </p>
-      </div>
-      <div className='btnContainer'>
-        <ResumeButton text='Download Resume' Icon={<FaFileDownload />} />
+      <div className='aboutWrapper'>
+        <div className='aboutText'>
+          <h3>About me</h3>
+          <p>{aboutMe.description}</p>
+        </div>
+        <div className='contactInfo'>
+          <h3>Contact</h3>
+          <p>{aboutMe.name}</p>
+          <p>{aboutMe.contact.city}</p>
+          <p>{aboutMe.contact.phone}</p>
+          <p>
+            <a href={mailTo}>
+              <span>{aboutMe.email}</span>
+            </a>
+          </p>
+        </div>
+        <div className='btnContainer'>
+          <ResumeButton text='Download Resume' Icon={<FaFileDownload />} />
+        </div>
       </div>
     </About>
   );
@@ -38,6 +40,24 @@ const About = styled.div`
   width: 100%;
   padding: 8rem 1.6rem;
   margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .imageWrapper {
+    width: 300px;
+    height: 300px;
+    margin-right: 5rem;
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 99999px;
+    }
+  }
+
+  .aboutWrapper {
+    max-width: 600px;
+  }
   h3,
   p {
   }
@@ -77,8 +97,21 @@ const About = styled.div`
   .btnContainer {
     margin-top: 2rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
+  }
+
+  @media only screen and (max-width: 768px) {
+    flex-direction: column;
+    .imageWrapper {
+      width: 200px;
+      height: 200px;
+      margin: 0;
+      margin-bottom: 2rem;
+    }
+    .btnContainer {
+      justify-content: center;
+    }
   }
 `;
 

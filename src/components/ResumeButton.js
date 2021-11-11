@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import pdf from "../data/test.pdf";
+import pdf from "../data/CV-oscar-forss.pdf";
 
 const ResumeButton = ({ Icon, text }) => {
   const download_file = (fileURL, fileName) => {
@@ -35,7 +35,7 @@ const ResumeButton = ({ Icon, text }) => {
   };
 
   return (
-    <Button onClick={() => download_file(pdf, "MyResume")}>
+    <Button onClick={() => download_file(pdf, "cv-oscar-forss")}>
       {Icon}
       <p>{text}</p>
     </Button>

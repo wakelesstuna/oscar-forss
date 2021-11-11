@@ -1,7 +1,7 @@
 import { FaGithub, FaLinkedinIn } from "react-icons/fa";
 import { IoMdSchool } from "react-icons/io";
 import styled from "styled-components";
-import { url } from "../data/url";
+import { links } from "../data/links";
 import { openUrlInNewTab } from "../utils/utils";
 
 const SocialIcons = ({ hoverColor, color }) => {
@@ -23,9 +23,9 @@ const SocialIcons = ({ hoverColor, color }) => {
 
   return (
     <IconContainer>
-      <FaLinkedinIn onClick={() => openUrlInNewTab(url.linkedIn)} />
-      <IoMdSchool onClick={() => openUrlInNewTab(url.school)} />
-      <FaGithub onClick={() => openUrlInNewTab(url.gitHub)} />
+      <FaLinkedinIn onClick={() => openUrlInNewTab(links.linkedIn)} />
+      <IoMdSchool onClick={() => openUrlInNewTab(links.school)} />
+      <FaGithub onClick={() => openUrlInNewTab(links.gitHub)} />
     </IconContainer>
   );
 };

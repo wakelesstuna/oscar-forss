@@ -1,14 +1,19 @@
 import ProjectItem from "./ProjectItem";
-import { url } from "../data/url";
+
+import { projects } from "../data/projects";
 
 const ProjectList = () => {
   return (
     <div>
-      <ProjectItem
-        url={url.shoeWebShop}
-        title='Shoe Webshop'
-        description='A shoe webshop build with Java and JavaFx, with a SQL database'
-      />
+      {projects.map((p, i) => (
+        <ProjectItem
+          key={i}
+          url={p.url}
+          title={p.title}
+          description={p.desctiption}
+          img={p.img}
+        />
+      ))}
     </div>
   );
 };

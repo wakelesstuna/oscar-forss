@@ -84,6 +84,7 @@ const Home = styled.div`
     color: white;
     cursor: pointer;
     position: absolute;
+    transform: translateX(-50%);
     bottom: 1rem;
     transition: all 250ms ease-in-out;
     &:hover {

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 import ListTitle from "./ListTitle";
-import ResumeItem from "./ResumeItem";
+import TechItem from "./TechItem";
 
-const ResumeList = ({ title, items }) => {
+const TechList = ({ title, items }) => {
   return (
     <List>
       <div>
@@ -10,11 +10,10 @@ const ResumeList = ({ title, items }) => {
       </div>
       {items &&
         items.map((item) => (
-          <ResumeItem
+          <TechItem
             key={item.id}
-            place={item.place}
-            underTitle={item.underTitle}
-            date={item.date}
+            title={item.title}
+            Icon={item.icon}
             description={item.description}
           />
         ))}
@@ -28,7 +27,7 @@ const List = styled.div`
   justify-content: center;
   align-items: center;
   padding-top: 2rem;
-  max-width: 900px;
+  max-width: 500px;
 `;
 
-export default ResumeList;
+export default TechList;
