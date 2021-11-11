@@ -21,7 +21,7 @@ const NavLinks = ({ onClick, width }) => {
       setMenuColor("black");
     }
     window.addEventListener("scroll", listenScrollEvent);
-  }, [width]);
+  }, [width, listenScrollEvent]);
 
   return (
     <>
