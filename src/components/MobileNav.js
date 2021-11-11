@@ -18,7 +18,7 @@ const MobileNav = () => {
 
   useEffect(() => {
     window.addEventListener("scroll", listenScrollEvent);
-  });
+  }, []);
 
   const Nav = styled.nav`
     position: fixed;

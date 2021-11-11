@@ -2,7 +2,7 @@ import styled from "styled-components";
 import SocialIcons from "./SocialIcons";
 import { IoIosArrowDropupCircle } from "react-icons/io";
 import { AiOutlineCopyrightCircle } from "react-icons/ai";
-import { Scrollchor, swing } from "react-scrollchor";
+import { Scrollchor } from "react-scrollchor";
 
 const Footer = () => {
   return (
